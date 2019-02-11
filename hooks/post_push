@@ -1,5 +1,7 @@
 #!/bin/bash
-
+echo $SOURCE_COMMIT
+GIT_SHA1=$(git rev-parse -q HEAD)
+echo $GIT_SHA1
 docker tag $IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT
 docker push $DOCKER_REPO:$SOURCE_COMMIT
 
